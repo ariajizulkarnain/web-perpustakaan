@@ -1,0 +1,420 @@
+<html lang="id">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Aplikasi Perpustakaan
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   /* General Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9; /* Menambahkan latar belakang netral */
+    color: #333;
+}
+
+/* Header Styling */
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan untuk kesan mendalam */
+}
+
+header img {
+    height: 50px;
+    vertical-align: middle;
+    margin-right: 10px; /* Memberi jarak antara logo dan teks jika ada */
+}
+
+header h1 {
+    display: inline;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Navigation Styling */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #45a049;
+    color: #f9f9f9;
+}
+
+/* Container Styling */
+.container {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1200px; /* Membatasi lebar konten */
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 15px 20px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Bayangan di atas footer */
+    font-size: 0.9rem;
+}
+
+/* Form Styling */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+.form-group button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.form-group button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 5px;
+    overflow: hidden; /* Untuk border radius di tabel */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+table th,
+table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+table tr:hover {
+    background-color: #f2f2f2; /* Highlight baris saat hover */
+}
+
+/* Responsive Styling */
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    footer {
+        position: static;
+    }
+
+    .container {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+}
+  </style>
+ </head>
+ <body>
+  <header>
+   <img alt="Logo aplikasi perpustakaan berupa buku terbuka dengan latar belakang hijau" height="50" src="https://storage.googleapis.com/a1aa/image/RTI255mwm45lM5uagV1LeXW0QFsBeOeEmEqw31uOCeAAZiNQB.jpg" width="50"/>
+   <nav>
+    <ul>
+     <li>
+      <a href="#beranda">
+       Beranda
+      </a>
+     </li>
+     <li>
+      <a href="#transaksi">
+       Transaksi
+      </a>
+     </li>
+     <li>
+      <a href="#profil">
+       Profil
+      </a>
+     </li>
+     <li>
+      <a href="#login">
+       Login
+      </a>
+     </li>
+    </ul>
+   </nav>
+  </header>
+  <div class="container" id="beranda">
+   <h1>
+    Beranda
+   </h1>
+   <p>
+    Selamat datang di Aplikasi Perpustakaan. Berikut adalah langkah-langkah menggunakan aplikasi ini:
+   </p>
+   <ol>
+    <li>
+     Login ke aplikasi.
+    </li>
+    <li>
+     Isi form transaksi untuk meminjam atau mengembalikan buku.
+    </li>
+    <li>
+     Lihat daftar transaksi untuk memantau status peminjaman buku.
+    </li>
+   </ol>
+  </div>
+  <div class="container" id="transaksi">
+   <h1>
+    Transaksi
+   </h1>
+   <form id="transaksiForm">
+    <div class="form-group">
+     <label for="namaTransaksi">
+      Nama Transaksi:
+     </label>
+     <input id="namaTransaksi" name="namaTransaksi" required="" type="text"/>
+    </div>
+    <div class="form-group">
+     <label for="jumlah">
+      Jumlah:
+     </label>
+     <input id="jumlah" name="jumlah" required="" type="number"/>
+    </div>
+    <div class="form-group">
+     <label for="kategori">
+      Kategori:
+     </label>
+     <select id="kategori" name="kategori" required="">
+      <option value="Peminjaman">
+       Peminjaman
+      </option>
+      <option value="Pengembalian">
+       Pengembalian
+      </option>
+     </select>
+    </div>
+    <div class="form-group">
+     <button type="submit">
+      Simpan
+     </button>
+    </div>
+   </form>
+   <a href="#daftarTransaksi">
+    Daftar Transaksi
+   </a>
+  </div>
+  <div class="container" id="daftarTransaksi">
+   <h1>
+    Daftar Transaksi
+   </h1>
+   <table>
+    <thead>
+     <tr>
+      <th>
+       Nama Transaksi
+      </th>
+      <th>
+       Jumlah
+      </th>
+      <th>
+       Kategori
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td>
+       Peminjaman Buku A
+      </td>
+      <td>
+       2
+      </td>
+      <td>
+       Peminjaman
+      </td>
+     </tr>
+     <tr>
+      <td>
+       Pengembalian Buku B
+      </td>
+      <td>
+       2
+      </td>
+      <td>
+       Pengembalian
+      </td>
+     </tr>
+     <tr>
+      <td>
+       Peminjaman Buku C
+      </td>
+      <td>
+       1
+      </td>
+      <td>
+       Peminjaman
+      </td>
+     </tr>
+     <tr>
+      <td>
+       Pengembalian Buku D
+      </td>
+      <td>
+       1
+      </td>
+      <td>
+       Pengembalian
+      </td>
+     </tr>
+     <tr>
+      <td>
+       Peminjaman Buku E
+      </td>
+      <td>
+       3
+      </td>
+      <td>
+       Peminjaman
+      </td>
+     </tr>
+    </tbody>
+   </table>
+  </div>
+  <div class="container" id="profil">
+   <h1>
+    Profil
+   </h1>
+   <p>
+    Aplikasi Perpustakaan ini dibuat untuk memudahkan pengelolaan peminjaman dan pengembalian buku di perpustakaan. Dengan aplikasi ini, pengguna dapat dengan mudah melakukan transaksi dan memantau status peminjaman buku.
+   </p>
+  </div>
+  <div class="container" id="login">
+   <h1>
+    Login
+   </h1>
+   <form id="loginForm">
+    <div class="form-group">
+     <label for="username">
+      Username:
+     </label>
+     <input id="username" name="username" required="" type="text"/>
+    </div>
+    <div class="form-group">
+     <label for="password">
+      Password:
+     </label>
+     <input id="password" name="password" required="" type="password"/>
+    </div>
+    <div class="form-group">
+     <button type="submit">
+      Login
+     </button>
+    </div>
+   </form>
+  </div>
+  <footer>
+   <p>
+    © 2025 Aplikasi Perpustakaan
+   </p>
+  </footer>
+  <script>
+   document.getElementById('transaksiForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const namaTransaksi = document.getElementById('namaTransaksi').value;
+            const jumlah = document.getElementById('jumlah').value;
+            const kategori = document.getElementById('kategori').value;
+
+            if (!namaTransaksi || !jumlah || !kategori) {
+                alert('Semua input harus diisi!');
+                return;
+            }
+
+            alert('Transaksi berhasil disimpan!');
+        });
+
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (!username || !password) {
+                alert('Username dan password harus diisi!');
+                return;
+            }
+
+            alert('Login berhasil!');
+        });
+  </script>
+ </body>
+</html>
